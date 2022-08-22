@@ -1,10 +1,11 @@
 import style from '../../assets/Style/Nav.module.scss'
 import { NavLink } from "react-router-dom"
 import logo from "../../assets/Images/header-bg.png"
+import styles from '../../assets/Style/Nav.module.scss'
 
 export const Navigation = () => {
     return (
-        <nav>
+        <nav className={styles.mainnav}>
             <img src={logo} alt="logo" />
             <ul>
                 <li><NavLink to={'/'}>Forside</NavLink></li>

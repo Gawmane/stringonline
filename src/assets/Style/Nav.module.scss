@@ -1,7 +1,7 @@
 @import '../Helpers/mixin';
 @import '../Helpers/variabler';
 
-nav {
+.mainnav {
 
     width: 75%;
     background-color: #303030;
@@ -41,6 +41,28 @@ nav {
                 // height: 100%;
 
 
+            }
+        }
+    }
+}
+
+.subnav {
+    border: 1px solid $primærknap;
+    width: 15%;
+    background-color: $knapbg;
+
+    li {
+        list-style: none;
+        text-align: left;
+
+        a {
+            color: $primærknap;
+            text-decoration: none;
+            font-size: 18pt;
+            cursor: pointer;
+
+            &:active {
+                color: $white;
             }
         }
     }
