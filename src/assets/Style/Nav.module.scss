@@ -1,0 +1,20 @@
+@import '../Helpers/mixin';
+@import '../Helpers/variabler';
+
+nav {
+
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: #303030;
+
+    li {
+        display: inline;
+        padding: 50px;
+
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #fff;
+        }
+    }
+}
