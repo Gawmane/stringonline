@@ -3,18 +3,31 @@
 
 nav {
 
-    display: grid;
-    grid-template-columns: auto auto;
+    width: 75%;
     background-color: #303030;
+    position: relative;
 
-    li {
-        display: inline;
-        padding: 50px;
+    img {
+        padding-left: 2em;
 
-        a {
-            text-decoration: none;
-            text-transform: uppercase;
-            color: #fff;
+    }
+
+    ul {
+
+        position: absolute;
+        top: 2.2vw;
+        right: 2vw;
+
+        li {
+            display: inline;
+            padding-left: 1em;
+
+
+            a {
+                text-decoration: none;
+                font-size: 18pt;
+                color: $white;
+            }
         }
     }
 }
