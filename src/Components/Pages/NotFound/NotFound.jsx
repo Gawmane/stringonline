@@ -1,4 +1,4 @@
-import '../../assets/Style/App.sccs';
+import '../../../assets/Style/App.scss';
 export const NotFound = () => {
     return (
         <>
