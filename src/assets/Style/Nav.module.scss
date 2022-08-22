@@ -15,18 +15,32 @@ nav {
     ul {
 
         position: absolute;
-        top: 2.2vw;
+        top: 1.9vw;
         right: 2vw;
+        width: 45%;
 
         li {
             display: inline;
             padding-left: 1em;
 
 
+
             a {
                 text-decoration: none;
                 font-size: 18pt;
                 color: $white;
+
+                &:nth-child(3) {
+                    color: $darkgrey;
+                }
+            }
+
+            button {
+                background-color: $primærknap;
+                width: 25%;
+                // height: 100%;
+
+
             }
         }
     }

@@ -9,7 +9,7 @@ export const Navigation = () => {
             <ul>
                 <li><NavLink to={'/'}>Forside</NavLink></li>
                 <li><NavLink to={'/handelsbetingelser'}>Salgs- og handelsbetingelser</NavLink></li>
-                <li><NavLink to={'/login'}>Login</NavLink></li>
+                <li><button><NavLink to={'/login'}>Login</NavLink></button></li>
 
             </ul>
         </nav>
