@@ -16,6 +16,7 @@ export const SubNav = () => {
                 const result = await appService.getList('productgroups');
                 if (result.data) {
                     setSubNav(result.data.items)
+                    // console.log(result.data.items)
                 }
             } catch (error) {
                 console.log(error);
@@ -29,12 +30,18 @@ export const SubNav = () => {
         <> <Layout title="" description="Produktsiden ">
 
             <nav className={style.subnav}>
-                <ul>
-                    {/* Tjekker ekstitere det og kan den mappes*/}
-                    {subNav && subNav.map(subNav => (
+
+                {/* Tjekker ekstitere det og kan den mappes*/}
+                {subNav && subNav.map(subNav => (
+                    <ul>
                         <li key={subNav.id}>
                             <Link to={subNav.id}> {subNav.title} </Link></li>
-                    ))}</ul>
+                        <ul>
+                            <li key={subNav.id}>
+                                <Link to={subNav.id}>{subNav.sortnumber}</Link></li>
+                        </ul>
+                    </ul>
+                ))}
                 {/* Router - viser både router og subrouter */}
                 <Outlet />
             </nav>

@@ -6,6 +6,7 @@ export const Home = () => {
             <Layout title="Home page" description="opgave">
                 Hallo
             </Layout>
+
         </>
     )
 }
