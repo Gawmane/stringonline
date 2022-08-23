@@ -2,4 +2,42 @@
 @import '../Helpers/variabler';
 
 
-header {}
+header {
+    display: grid;
+    grid-template-columns: 80% 20%;
+
+    section {
+        // width: 25%;
+
+        position: relative;
+        grid-template-rows: auto auto;
+
+        div {
+            p {
+                font-size: 10px;
+                display: inline;
+                color: $lightgrey;
+            }
+
+            img {
+                display: inline;
+                width: 1vw;
+            }
+        }
+
+        .searchinput {
+            background-color: $knapbg;
+            width: 70%;
+            height: 15vh;
+            border-radius: 5px;
+            border: solid 1px $knapbg;
+            color: $primærknap;
+        }
+
+        .searchbutton {
+            @include button;
+            height: 15vh;
+            width: 25%;
+        }
+    }
+}

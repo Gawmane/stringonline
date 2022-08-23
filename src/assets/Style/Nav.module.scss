@@ -3,7 +3,7 @@
 
 .mainnav {
 
-    width: 75%;
+    // width: 75%;
     background-color: #303030;
     position: relative;
 
@@ -17,7 +17,7 @@
         position: absolute;
         top: 1.9vw;
         right: 2vw;
-        width: 45%;
+        width: 50%;
 
         li {
             display: inline;
@@ -36,11 +36,9 @@
             }
 
             button {
-                background-color: $primærknap;
+                @include button;
+
                 width: 25%;
-                // height: 100%;
-
-
             }
         }
     }

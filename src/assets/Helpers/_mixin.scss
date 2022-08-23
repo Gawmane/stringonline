@@ -4,3 +4,8 @@
     margin-right: auto;
 }
 
+@mixin button {
+    background-color: $primærknap;
+    border-radius: 5px;
+
+}
