@@ -1,3 +1,4 @@
+import { SubNav } from "../../Partials/SubNav"
 import { Layout } from "../../Tools/Layout/Layout"
 
 export const Terms = () => {
@@ -6,6 +7,7 @@ export const Terms = () => {
             <Layout title="Salgs og handelsbetingelser" description="Salgs og handelsbetingelser">
                 Salgs og handelsbetingelser
             </Layout>
+            <SubNav />
         </>
     )
 }

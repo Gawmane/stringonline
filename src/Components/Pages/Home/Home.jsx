@@ -1,3 +1,4 @@
+import { SubNav } from "../../Partials/SubNav"
 import { Layout } from "../../Tools/Layout/Layout"
 
 export const Home = () => {
@@ -6,7 +7,7 @@ export const Home = () => {
             <Layout title="Home page" description="opgave">
                 Hallo
             </Layout>
-
+            <SubNav />
 
         </>
     )

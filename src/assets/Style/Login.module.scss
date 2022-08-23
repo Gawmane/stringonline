@@ -1,0 +1,19 @@
+@import '../Helpers/mixin';
+@import '../Helpers/variabler';
+
+section {
+    display: inline;
+
+    button {
+        @include button;
+        height: 5vh;
+        width: 7vw;
+
+
+    }
+
+    input {
+        @include input;
+        display: block;
+    }
+}

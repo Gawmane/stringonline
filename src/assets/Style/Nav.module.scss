@@ -16,7 +16,7 @@
 
         position: absolute;
         top: 1.9vw;
-        right: 2vw;
+        right: -3vw;
         width: 50%;
 
         li {
@@ -37,8 +37,8 @@
 
             button {
                 @include button;
-
-                width: 25%;
+                height: 5vh;
+                width: 7vw;
             }
         }
     }

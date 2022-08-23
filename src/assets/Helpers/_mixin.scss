@@ -7,5 +7,19 @@
 @mixin button {
     background-color: $primærknap;
     border-radius: 5px;
+    cursor: pointer;
+}
 
+@mixin input {
+    background-color: $knapbg;
+    width: 12vw;
+    height: 7vh;
+    border-radius: 5px;
+    border: solid 1px $knapbg;
+    color: $primærknap;
+
+
+    &::placeholder {
+        color: $primærknap;
+    }
 }

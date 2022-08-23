@@ -26,17 +26,18 @@ header {
         }
 
         .searchinput {
-            background-color: $knapbg;
-            width: 70%;
-            height: 15vh;
-            border-radius: 5px;
-            border: solid 1px $knapbg;
-            color: $primærknap;
+            // background-color: $knapbg;
+            // width: 70%;
+            // height: 15vh;
+            // border-radius: 5px;
+            // border: solid 1px $knapbg;
+            // color: $primærknap;
+            @include input;
         }
 
         .searchbutton {
             @include button;
-            height: 15vh;
+            height: 7vh;
             width: 25%;
         }
     }

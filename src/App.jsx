@@ -9,6 +9,7 @@ import { Footer } from '../src/Components/Partials/Footer';
 
 //Style
 import './assets/Style/App.scss';
+import { SubNav } from './Components/Partials/SubNav';
 
 
 
@@ -19,6 +20,7 @@ function App() {
       {/* Router - Skal omfange de sider vi har på siden*/}
       <Router>
         <Header />
+        <SubNav />
         <Main>
           {/* Indsætter approuter inde i vores main da alt indhold skal ind under main (chrild) */}
           <AppRouter />

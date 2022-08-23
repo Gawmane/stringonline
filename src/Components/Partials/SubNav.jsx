@@ -1,4 +1,4 @@
-import { Layout } from "../Tools/Layout/Layout"
+
 import { useState, useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
 import appService from "../Tools/Appservice/AppService";
@@ -27,7 +27,7 @@ export const SubNav = () => {
 
 
     return (
-        <> <Layout title="" description="Produktsiden ">
+        <>
 
             <nav className={style.subnav}>
 
@@ -47,7 +47,7 @@ export const SubNav = () => {
             </nav>
 
 
-        </Layout>
+
         </>
     )
 }
