@@ -17,7 +17,7 @@ export const Navigation = () => {
                 <li><NavLink to={'/'}>Forside</NavLink></li>
                 <li><NavLink to={'/handelsbetingelser'}>Salgs- og handelsbetingelser</NavLink></li>
                 {/* Laver en conditional ternary operator - hvis ikke logget ind skriv login på knappet hvis man er skriv logut */}
-                <li><button><NavLink to={'/login'}>{!loggedIn ? <a>Login</a> : <a>Logout</a>}</NavLink></button></li>
+                <li><button><NavLink to={'/login'}>Login</NavLink></button></li>
                 {/* <li> {!loggedIn ? <Login /> : <Logout />}</li> */}
             </ul>
         </nav>

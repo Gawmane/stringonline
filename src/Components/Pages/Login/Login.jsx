@@ -32,8 +32,7 @@ const Login = () => {
         <section>
             <Layout title="Login" description="Login side" subtitle="Indtast brugernav og adgangskode for at logge på">
                 Login midlertidigt
-
-
+                <SubNav />
                 {/* Laver form der kan register brugernavn og adgangskode */}
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/* //Spret oparter */}
