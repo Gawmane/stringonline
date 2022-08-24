@@ -4,8 +4,8 @@ import { Favorites, Home } from '../../Pages/Home/Home'
 import { Terms } from '../../Pages/Home/Terms'
 import Login from '../../Pages/Login/Login'
 import { ProductsList } from '../../Pages/Produkt/ProduktListe'
-import { SubNav } from '../../Partials/SubNav'
 import Logout from '../../Pages/Login/Logout'
+import { BrandDetails, Brands } from '../../Pages/Brands/Brands'
 
 
 
@@ -23,6 +23,13 @@ export const AppRouter = () => {
             {/* <Route path="/dashboard" element={!loggedIn ? <Login /> : <Logout />}></Route> */}
             <Route path='/produkter' element={<ProductsList />} />
             <Route path='/faroritter' element={<Favorites />} />
+
+
+            <Route path='/brands' element={<Brands />} >
+                <Route path=':id' element={<BrandDetails />} />
+            </Route>
+
+
 
 
 

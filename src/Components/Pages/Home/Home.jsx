@@ -12,7 +12,8 @@ export const Home = () => {
                 Hallo
             </Layout>
             <SubNav />
-            <Favorites />
+            {/* <Favorites /> */}
+
 
         </>
     )

@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
 import appService from "../Tools/Appservice/AppService";
 import style from '../../assets/Style/Nav.module.scss'
+import { BrandDetails } from "../Pages/Brands/Brands";
 
 export const SubNav = () => {
 
     const [subNav, setSubNav] = useState([])
+    const [brands, setBrands] = useState([]);
     const [dropdown, setDropdown] = useState(false);
 
 
@@ -27,6 +29,23 @@ export const SubNav = () => {
         getSubNav()
     }, []);
 
+
+
+    useEffect(() => {
+        const getBrands = async () => {
+            //Ændres til produkter når det er lavet
+            try {
+                const result = await appService.getList('brands');
+                if (result.data) {
+                    setBrands(result.data.items);
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getBrands();
+    }, []);
+
     const showDropdown = () => {
         setDropdown(true);
     }
@@ -40,6 +59,7 @@ export const SubNav = () => {
 
                     <li key={subNav.id}>
                         <Link to={''} onClick={showDropdown}> {subNav.title} </Link>
+
                         {dropdown ? (<ul onClik={showDropdown}>
                             {subNav && subNav.subgroups.map((subGroup) => {
                                 return (
@@ -49,7 +69,10 @@ export const SubNav = () => {
 
                                 )
                             })}
+
+
                         </ul>) : null}
+
                     </li>
 
 
@@ -57,6 +80,23 @@ export const SubNav = () => {
 
                 )
             })}
+            <li key={brands.id}>
+                <Link to={''} onClick={showDropdown}> Brands </Link>
+
+                {dropdown ? (<ul onClik={showDropdown}>
+                    {brands && brands.map((brands) => {
+                        return (
+                            <li key={brands.id}>
+                                <Link to={`/brands/${brands.id}`}>{brands.title}</Link>
+                            </li>
+
+                        )
+                    })}
+
+
+                </ul>) : null}
+
+            </li>
 
         </nav>
     )
