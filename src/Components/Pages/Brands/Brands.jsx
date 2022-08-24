@@ -16,7 +16,7 @@ export const Brands = () => {
 
     )
 }
-export const BrandDetails = () => {
+export const BrandDetails = ({ data }) => {
     const [brandDetails, setBrandDetails] = useState([]);
     const { id } = useParams();
 
