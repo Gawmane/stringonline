@@ -27,27 +27,28 @@ export const SubNav = () => {
 
 
     return (
-        <>
+        <nav className={style.subnav}>
 
-            <nav className={style.subnav}>
-
-                {/* Tjekker ekstitere det og kan den mappes*/}
-                {subNav && subNav.map(subNav => (
-                    <ul>
+            {/* Tjekker ekstitere det og kan den mappes*/}
+            {subNav && subNav.map((subNav) => {
+                return (
+                    <ul key={subNav.id}>
                         <li key={subNav.id}>
-                            <Link to={subNav.id}> {subNav.title} </Link></li>
-                        <ul>
-                            <li key={subNav.id}>
-                                <Link to={subNav.id}>{subNav.sortnumber}</Link></li>
-                        </ul>
+                            <Link to={subNav.id}> {subNav.title} </Link>
+                        </li>
+
+                        {subNav && subNav.subgroups.map((subGroup) => {
+                            return (
+                                <li key={subGroup.id}>
+                                    <Link to=''>{subGroup.title}</Link>
+                                </li>
+
+                            )
+                        })}
                     </ul>
-                ))}
-                {/* Router - viser både router og subrouter */}
-                <Outlet />
-            </nav>
+                )
+            })}
 
-
-
-        </>
+        </nav>
     )
 }
