@@ -1,0 +1,14 @@
+@import '../Helpers/mixin';
+@import '../Helpers/variabler';
+
+.brand {
+    display: grid;
+    grid-template-columns: 30% 70%;
+
+
+    article {
+        background-color: red;
+
+
+    }
+}

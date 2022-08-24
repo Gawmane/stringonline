@@ -63,7 +63,7 @@ export const SubNav = () => {
                         {dropdown ? (<ul onClik={showDropdown}>
                             {subNav && subNav.subgroups.map((subGroup) => {
                                 return (
-                                    <li key={subGroup.id}>
+                                    <li key={subGroup.id} className={style.subli}>
                                         <Link to=''>{subGroup.title}</Link>
                                     </li>
 
@@ -86,7 +86,7 @@ export const SubNav = () => {
                 {dropdown ? (<ul onClik={showDropdown}>
                     {brands && brands.map((brands) => {
                         return (
-                            <li key={brands.id}>
+                            <li key={brands.id} className={style.subli}>
                                 <Link to={`/brands/${brands.id}`}>{brands.title}</Link>
                             </li>
 

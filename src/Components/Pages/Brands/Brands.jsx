@@ -3,13 +3,13 @@ import { useState, useEffect } from "react";
 
 import appService from "../../Tools/Appservice/AppService"
 import { SubNav } from "../../Partials/SubNav";
-
+import style from "../../../assets/Style/Brands.module.scss"
 
 export const Brands = () => {
 
 
     return (
-        <section>
+        <section className={style.brand}>
             <SubNav />
             <Outlet />
         </section>
@@ -36,14 +36,14 @@ export const BrandDetails = ({ data }) => {
     }, [id]);
     return (
         <>
-
-            <figure key={brandDetails.id}>
-                <img src={brandDetails.image_fullpath} alt={brandDetails.title} />
-                <figcaption>
-                    <h2>{brandDetails.title}</h2>
-                    <p>{brandDetails.description}</p>
-                </figcaption>
-            </figure>
+            <article>
+                <figure key={brandDetails.id}>
+                    <img src={brandDetails.image_fullpath} alt={brandDetails.title} />
+                    <figcaption>
+                        <h2>{brandDetails.title}</h2>
+                        <p>{brandDetails.description}</p>
+                    </figcaption>
+                </figure></article>
             {/* {brandDetails && brandDetails.map((brands) => {
                 return (
                     <figure key={brands.id}>
@@ -83,5 +83,6 @@ export const BrandDetails = ({ data }) => {
                 )
             })}*/}
         </>
+
     )
 }
