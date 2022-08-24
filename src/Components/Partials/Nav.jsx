@@ -2,14 +2,10 @@ import style from '../../assets/Style/Nav.module.scss'
 import { NavLink } from "react-router-dom"
 import logo from "../../assets/Images/header-bg.png"
 import styles from '../../assets/Style/Nav.module.scss'
-import Login from '../Pages/Login/Login'
-import Logout from '../Pages/Login/Logout'
-import UseLoginStore from '../Pages/Login/UseLoginStore'
+
 
 export const Navigation = () => {
-    const { loggedIn } = UseLoginStore((store) => ({
-        loggedIn: store.loggedIn,
-    }))
+
     return (
         <nav className={styles.mainnav}>
             <img src={logo} alt="logo" />
