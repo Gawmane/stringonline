@@ -59,6 +59,10 @@
             font-size: 18pt;
             cursor: pointer;
 
+            &:hover {
+                color: $white;
+            }
+
             &:active {
                 color: $white;
             }

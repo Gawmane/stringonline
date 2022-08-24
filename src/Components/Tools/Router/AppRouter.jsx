@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { NotFound } from '../../Pages/NotFound/NotFound'
-import { Home } from '../../Pages/Home/Home'
+import { Favorites, Home } from '../../Pages/Home/Home'
 import { Terms } from '../../Pages/Home/Terms'
 import Login from '../../Pages/Login/Login'
 import { ProductsList } from '../../Pages/Produkt/ProduktListe'
@@ -21,9 +21,9 @@ export const AppRouter = () => {
             <Route path='/handelsbetingelser' element={<Terms />} />
             <Route path='/login' element={<Login />} />
             {/* <Route path="/dashboard" element={!loggedIn ? <Login /> : <Logout />}></Route> */}
-
-            <Route path=':id' element={<SubNav />} />
             <Route path='/produkter' element={<ProductsList />} />
+            <Route path='/faroritter' element={<Favorites />} />
+
 
 
 
