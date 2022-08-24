@@ -30,19 +30,17 @@ export const SubNav = () => {
     const showDropdown = () => {
         setDropdown(true);
     }
-    const hideDropdown = () => {
-        setDropdown(false);
-    }
+
     return (
-        <nav className={style.subnav} onMouseEnter={showDropdown} onMouseLeave={hideDropdown}>
+        <nav className={style.subnav} >
 
             {/* Tjekker ekstitere det og kan den mappes*/}
             {subNav && subNav.map((subNav) => {
                 return (
 
                     <li key={subNav.id}>
-                        <Link to={subNav.id}> {subNav.title} </Link>
-                        {dropdown ? (<ul onMouseEnter={showDropdown}>
+                        <Link to={''} onClick={showDropdown}> {subNav.title} </Link>
+                        {dropdown ? (<ul onClik={showDropdown}>
                             {subNav && subNav.subgroups.map((subGroup) => {
                                 return (
                                     <li key={subGroup.id}>
