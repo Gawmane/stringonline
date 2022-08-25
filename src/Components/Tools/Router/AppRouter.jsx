@@ -5,6 +5,7 @@ import { Terms } from '../../Pages/Home/Terms'
 import { ProductsList } from '../../Pages/Produkt/ProduktListe'
 import { BrandDetails, Brands } from '../../Pages/Brands/Brands'
 import { LoginPage } from '../../Pages/Login/LoginPage'
+import { Form } from '../../Pages/CheckOut/Form'
 
 
 
@@ -19,6 +20,8 @@ export const AppRouter = () => {
             {/* <Route path="/dashboard" element={!loggedIn ? <Login /> : <Logout />}></Route> */}
             <Route path='/produkter' element={<ProductsList />} />
             <Route path='/faroritter' element={<Favorites />} />
+            <Route path='/kasse' element={<Form />} />
+
 
 
             <Route path='/brands' element={<Brands />} >
