@@ -14,14 +14,14 @@ export const Header = () => {
             <Navigation />
             <section>
                 <article>
-                    <div>
+                    <div className={style.wrapper}>
                         <img src={mail} alt="mailicon" />
                         <p>Sale@stringonline.com</p>
 
-                        <img src={phone} alt="phoneicon" />
+                        <img src={phone} alt="phoneicon" className={style.phone} />
                         <p>+45 98 12 22 68</p>
 
-                        <Link to="/kasse"> <button><img src={cart} alt="carticon" /></button></Link>
+                        <Link to="/kasse"><img src={cart} alt="carticon" className={style.kurv} /></Link>
                     </div>
                     <Search />
                 </article>

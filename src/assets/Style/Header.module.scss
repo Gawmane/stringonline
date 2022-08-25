@@ -2,43 +2,76 @@
 @import '../Helpers/variabler';
 
 
-header {
-    display: grid;
-    grid-template-columns: 80% 20%;
 
-    section {
-        // width: 25%;
+@media screen and (min-width: $x-large) {
 
-        position: relative;
-        grid-template-rows: auto auto;
+    header {
+        display: grid;
+        grid-template-columns: 80% 25%;
 
-        div {
+        section {
+            // width: 25%;
+            padding-left: 0.5em;
+            padding-top: 0.3em;
+            position: relative;
+            grid-template-rows: auto auto;
+
+            div {
+                p {
+                    font-size: 10px;
+                    display: inline;
+                    color: $lightgrey;
+                }
+
+                img {
+                    display: inline;
+                    width: 1vw;
+                }
+            }
+
+            .searchinput {
+
+                width: 10vw;
+                height: 16vh;
+                @include input;
+                display: inline;
+            }
+
+            .searchbutton {
+                @include button;
+                height: 16vh;
+                width: 3.5vw;
+                // font-size: 1.3em;
+                margin-left: 0.3em;
+
+            }
+        }
+
+        .wrapper {
             p {
-                font-size: 10px;
-                display: inline;
-                color: $lightgrey;
+                padding: 1em;
             }
 
-            img {
-                display: inline;
-                width: 1vw;
+            .phone {
+                width: 0.4vw;
+
+
+            }
+
+            .kurv {
+                background-color: transparent;
+                width: 1.5vw;
             }
         }
+    }
+}
 
-        .searchinput {
-            // background-color: $knapbg;
-            // width: 70%;
-            // height: 15vh;
-            // border-radius: 5px;
-            // border: solid 1px $knapbg;
-            // color: $primærknap;
-            @include input;
-        }
+@media screen and (max-width: $large) {}
 
-        .searchbutton {
-            @include button;
-            height: 7vh;
-            width: 25%;
-        }
+@media screen and (max-width: $tablet) {}
+
+@media screen and (max-width: $mobile) {
+    .searchbutton {
+        background-color: red;
     }
 }
