@@ -19,7 +19,7 @@ export const AppRouter = () => {
             <Route path='/login' element={<LoginPage />} />
             {/* <Route path="/dashboard" element={!loggedIn ? <Login /> : <Logout />}></Route> */}
             <Route path='/produkter' element={<ProductsList />} />
-            <Route path='/faroritter' element={<Favorites />} />
+
             <Route path='/kasse' element={<Form />} />
 
 

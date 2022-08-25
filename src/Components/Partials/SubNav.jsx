@@ -1,12 +1,10 @@
-
 import { useState, useEffect } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import appService from "../Tools/Appservice/AppService";
 import style from '../../assets/Style/Nav.module.scss'
-import { BrandDetails } from "../Pages/Brands/Brands";
+import { Brands } from "../Pages/Brands/Brands";
 
 export const SubNav = () => {
-
     const [subNav, setSubNav] = useState([])
     const [brands, setBrands] = useState([]);
     const [dropdown, setDropdown] = useState(false);
@@ -52,36 +50,26 @@ export const SubNav = () => {
 
     return (
         <nav className={style.subnav} >
-
             {/* Tjekker ekstitere det og kan den mappes*/}
             {subNav && subNav.map((subNav) => {
                 return (
 
                     <li key={subNav.id}>
                         <Link to={''} onClick={showDropdown}> {subNav.title} </Link>
-
                         {dropdown ? (<ul onClik={showDropdown}>
                             {subNav && subNav.subgroups.map((subGroup) => {
                                 return (
                                     <li key={subGroup.id} className={style.subli}>
                                         <Link to=''>{subGroup.title}</Link>
                                     </li>
-
                                 )
                             })}
-
-
                         </ul>) : null}
-
                     </li>
-
-
-
-
                 )
             })}
             <li key={brands.id}>
-                <Link to={''} onClick={showDropdown}> Brands </Link>
+                <Link to='/' onClick={showDropdown}> Brands </Link>
 
                 {dropdown ? (<ul onClik={showDropdown}>
                     {brands && brands.map((brands) => {

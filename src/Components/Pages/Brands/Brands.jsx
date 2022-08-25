@@ -6,13 +6,41 @@ import { SubNav } from "../../Partials/SubNav";
 import style from "../../../assets/Style/Brands.module.scss"
 
 export const Brands = () => {
+    const [brandList, setBrandList] = useState([]);
 
-
+    useEffect(() => {
+        const getBrandList = async () => {
+            //Ændres til produkter når det er lavet
+            try {
+                const result = await appService.getList('brands');
+                if (result.data) {
+                    setBrandList(result.data.item);
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getBrandList();
+    }, []);
     return (
-        <section className={style.brand}>
-            <SubNav />
-            <Outlet />
-        </section>
+        <>
+            <section className={style.brand}>
+
+                <SubNav />
+
+
+                {/* {brandList && brandList.map((item) => {
+                    return (
+                        <article>
+
+                            <h2>{item.title}</h2>
+                            <img src={item.image_fullpath} alt={item.title} />
+                            <p>{item.description}</p>
+                        </article>
+                    )
+                })} */}
+            </section><Outlet />
+        </>
 
     )
 }
@@ -43,45 +71,9 @@ export const BrandDetails = ({ data }) => {
                         <h2>{brandDetails.title}</h2>
                         <p>{brandDetails.description}</p>
                     </figcaption>
-                </figure></article>
-            {/* {brandDetails && brandDetails.map((brands) => {
-                return (
-                    <figure key={brands.id}>
-                        <Link to={''}> {brands.title} </Link>
+                </figure>
+            </article>
 
-
-                        {brandDetails && brandDetails.products.map((product, i) => {
-                            return (
-                                <figcaption key={product.id}>
-                                    <h1>{product.name}</h1>
-                                    <figcaption> <img src="" alt="" /></figcaption>
-                                    <article>
-
-                                        <h2>{product.brand}</h2>
-                                        <p>{product.description_long}</p>
-                                        <a href=""></a>
-                                    </article>
-                                    <article>
-                                        <p>{product.price}</p>
-                                        <button></button>
-                                        <p>{product.stock}</p>
-                                    </article>
-                                    {/* <Link to={`/produkter/${subGroups.id}`}>{subGroups.title}</Link> 
-                                </figcaption>
-
-                            )
-                        })}
-
-
-
-
-                    </figure>
-
-
-
-
-                )
-            })}*/}
         </>
 
     )
