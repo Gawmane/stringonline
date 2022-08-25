@@ -12,21 +12,57 @@ export const Home = () => {
                 Hallo
             </Layout>
             <SubNav />
+            <Hero />
             <Favorites />
 
 
         </>
     )
 }
+
+export const Hero = () => {
+    const [hero, setHero] = useState([]);
+    useEffect(() => {
+        const getHero = async () => {
+            //Ændres til produkter når det er lavet
+            try {
+                const result = await appService.getList('');
+                if (result.data) {
+                    setHero(result.data.productgroups.items[1].subgroups[0].products[0]);
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getHero();
+    }, []);
+    return (
+
+
+        <section>
+            <figure>
+                <img src={hero.image_fullpath} alt={hero.title} />
+                <figcaption>
+                    <h1>{hero.title}</h1>
+                    <h3>{hero.brand}</h3>
+                    <h2>{hero.description_short.substring(0, 10)}</h2>
+                    <Link to="/product/1"><button>Læs mere</button></Link>
+                </figcaption>
+            </figure>
+        </section>
+
+
+    )
+}
 export const Favorites = () => {
-    const [favorites, setFavorites] = useState([]);
+    const [farvorit, setFarvorit] = useState([]);
     useEffect(() => {
         const getFavorites = async () => {
             //Ændres til produkter når det er lavet
             try {
                 const result = await appService.getList('');
                 if (result.data) {
-                    setFavorites(result.data.productgroups.items[0].subgroups[0].products);
+                    setFarvorit(result.data.productgroups.items[0].subgroups[0].products);
                 }
             } catch (error) {
                 console.log(error)
@@ -37,7 +73,7 @@ export const Favorites = () => {
     return (
         <>
             <h2>Kundernes faroritter</h2>
-            {favorites && favorites.map((favorites, i) => {
+            {farvorit && farvorit.map((favorites, i) => {
                 if (i < 4) {
                     return (
                         <figure key={favorites.id}>
