@@ -29,7 +29,7 @@ export const Brands = () => {
                 <SubNav />
 
 
-                {/* {brandList && brandList.map((item) => {
+                {brandList && brandList.map((item) => {
                     return (
                         <article>
 
@@ -38,7 +38,7 @@ export const Brands = () => {
                             <p>{item.description}</p>
                         </article>
                     )
-                })} */}
+                })}
             </section><Outlet />
         </>
 

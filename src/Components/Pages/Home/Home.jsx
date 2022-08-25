@@ -45,7 +45,7 @@ export const Hero = () => {
                 <figcaption>
                     <h1>{hero.title}</h1>
                     <h3>{hero.brand}</h3>
-                    <h2>{hero.description_short.substring(0, 10)}</h2>
+                    <h2>{hero.description_short}</h2>
                     <Link to="/product/1"><button>Læs mere</button></Link>
                 </figcaption>
             </figure>

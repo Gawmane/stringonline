@@ -60,7 +60,8 @@ export const SubNav = () => {
                             {subNav && subNav.subgroups.map((subGroup) => {
                                 return (
                                     <li key={subGroup.id} className={style.subli}>
-                                        <Link to=''>{subGroup.title}</Link>
+                                        <Link to={`/produkter/${subGroup.id}`}>{subGroup.title}</Link>
+
                                     </li>
                                 )
                             })}

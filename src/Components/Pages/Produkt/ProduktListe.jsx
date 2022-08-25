@@ -1,29 +1,29 @@
 
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import appService from "../../Tools/Appservice/AppService";
 
 
 
 export const ProductsList = () => {
     const [product, setProduct] = useState([])
+    const { id } = useParams();
 
     // //Definer getEvent og render den hvis den ændre sig
     useEffect(() => {
         const getProduct = async () => {
 
-            const getProduct = async () => {
-                // const url = `https://api.mediehuset.net/stringsonline/groups/${id}/subgroup/${id}`
-                const url = 'https://api.mediehuset.net/stringsonline/'
-
-                const result = await axios.get(url);
-
-                setProduct(result.data.items.productgroups.subgroups.products)
-                // console.log(result.data.items)
+            try {
+                const result = await appService.getDetails('productgroups', id);
+                if (result.data) {
+                    setProduct(result.data.group.products);
+                }
+            } catch (error) {
+                console.log(error)
             }
         }
-        getProduct()
-    }, []);
+        getProduct();
+    }, [id]);
     return (
         <article>
 
@@ -31,28 +31,25 @@ export const ProductsList = () => {
             {product && product.map((product) => {
                 return (
                     <figure key={product.id}>
-                        {product && product.map((subGroups, i) => (
-                            <figcaption key={subGroups.id}>
-                                <h1>{product.name}</h1>
-                                <figcaption> <img src="" alt="" /></figcaption>
-                                <article>
+                        <img src={product.image_fullpath} alt={product.id} />
+                        <figcaption>
+                            <article>
+                                <h2>{product.name}</h2>
+                                <h2>{product.brand}</h2>
+                                <p>{product.description_short} <Link to="">Læs mere</Link> </p>
+                            </article>
+                            <article>
+                                <p>{product.price}</p>
 
-                                    <h2>{product.brand}</h2>
-                                    <p>{product.description_long}</p>
-                                    <a href=""></a>
-                                </article>
-                                <article>
-                                    <p>{product.price}</p>
-                                    <button></button>
-                                    <p>{product.stock}</p>
-                                </article>
-                                <Link to={`/produkter/${subGroups.id}`}>{subGroups.title}</Link>
-                            </figcaption>
+                                <Link to={`/produkter/${product.name}`}><button>Læg i kurv</button></Link>
+                                <p>{product.stock}På lager</p>
+                            </article>
 
-                        ))}
-                    </figure>
+                        </figcaption></figure>
                 )
             })}
+
+
 
         </article>
     )

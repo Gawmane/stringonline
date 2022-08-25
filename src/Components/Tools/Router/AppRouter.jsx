@@ -6,6 +6,7 @@ import { ProductsList } from '../../Pages/Produkt/ProduktListe'
 import { BrandDetails, Brands } from '../../Pages/Brands/Brands'
 import { LoginPage } from '../../Pages/Login/LoginPage'
 import { Form } from '../../Pages/CheckOut/Form'
+import { ProductsDetails } from '../../Pages/Produkt/ProduktDetails'
 
 
 
@@ -17,15 +18,16 @@ export const AppRouter = () => {
             <Route index element={<Home />} />
             <Route path='/handelsbetingelser' element={<Terms />} />
             <Route path='/login' element={<LoginPage />} />
-            {/* <Route path="/dashboard" element={!loggedIn ? <Login /> : <Logout />}></Route> */}
-            <Route path='/produkter' element={<ProductsList />} />
 
             <Route path='/kasse' element={<Form />} />
 
 
-
+            <Route path='/produkter' element={<ProductsList />} >
+                <Route path=':id' element={<ProductsDetails />} />
+            </Route>
             <Route path='/brands' element={<Brands />} >
                 <Route path=':id' element={<BrandDetails />} />
+
             </Route>
 
 
