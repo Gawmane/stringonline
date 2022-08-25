@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import { SubNav } from "../../Partials/SubNav";
 import appService from "../../Tools/Appservice/AppService";
 
 
@@ -25,33 +26,34 @@ export const ProductsList = () => {
         getProduct();
     }, [id]);
     return (
-        <article>
+        <><SubNav />
+            <article>
 
-            {/* Tjekker ekstitere det og kan den mappes */}
-            {product && product.map((product) => {
-                return (
-                    <figure key={product.id}>
-                        <img src={product.image_fullpath} alt={product.id} />
-                        <figcaption>
-                            <article>
-                                <h2>{product.name}</h2>
-                                <h2>{product.brand}</h2>
-                                <p>{product.description_short} <Link to="">Læs mere</Link> </p>
-                            </article>
-                            <article>
-                                <p>{product.price}</p>
+                {/* Tjekker ekstitere det og kan den mappes */}
+                {product && product.map((product) => {
+                    return (
+                        <figure key={product.id}>
+                            <img src={product.image_fullpath} alt={product.id} />
+                            <figcaption>
+                                <article>
+                                    <h2>{product.name}</h2>
+                                    <h2>{product.brand}</h2>
+                                    <p>{product.description_short} <Link to={`/produkter/id`}>Læs mere</Link> </p>
+                                </article>
+                                <article>
+                                    <p>{product.price}</p>
 
-                                <Link to={`/produkter/${product.name}`}><button>Læg i kurv</button></Link>
-                                <p>{product.stock}På lager</p>
-                            </article>
+                                    <Link to=""><button>Læg i kurv</button></Link>
+                                    <p>{product.stock}På lager</p>
+                                </article>
 
-                        </figcaption></figure>
-                )
-            })}
+                            </figcaption></figure>
+                    )
+                })}
 
 
 
-        </article>
+            </article></>
     )
 }
 

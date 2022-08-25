@@ -22,6 +22,7 @@ export const AppRouter = () => {
             <Route path='/kasse' element={<Form />} />
 
 
+
             <Route path='/produkter' element={<ProductsList />} >
                 <Route path=':id' element={<ProductsDetails />} />
             </Route>
