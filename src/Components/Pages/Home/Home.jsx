@@ -12,7 +12,7 @@ export const Home = () => {
                 Hallo
             </Layout>
             <SubNav />
-            {/* <Favorites /> */}
+            <Favorites />
 
 
         </>
@@ -24,9 +24,9 @@ export const Favorites = () => {
         const getFavorites = async () => {
             //Ændres til produkter når det er lavet
             try {
-                const result = await appService.getList('productgroups');
+                const result = await appService.getList('');
                 if (result.data) {
-                    setFavorites(result.data.items);
+                    setFavorites(result.data.productgroups.items[0].subgroups[0].products);
                 }
             } catch (error) {
                 console.log(error)
@@ -37,32 +37,31 @@ export const Favorites = () => {
     return (
         <>
             <h2>Kundernes faroritter</h2>
-            {favorites && favorites.map((favorites) => {
-                return (
-                    <figure key={favorites.id}>
-                        {favorites && favorites.subgroups.map((subGroup, i) => (
+            {favorites && favorites.map((favorites, i) => {
+                if (i < 4) {
+                    return (
+                        <figure key={favorites.id}>
+                            <img src={favorites.image_fullpath} alt={favorites.name} />
                             <figcaption>
-                                {/* 
-                                Til når jeg får løst mit probelm med produkt endpoint
-                                <h1>{product.name}</h1>
-                                <figcaption> <img src="" alt="" /></figcaption>
                                 <article>
+                                    <h1>{favorites.name}</h1>
+                                    <h2>{favorites.brand}</h2>
+                                    <p>{favorites.description_long.substring(0, 580)} <a href="">Læs mere</a></p>
 
-                                    <h2>{product.brand}</h2>
-                                    <p>{product.description_long}</p>
-                                    <a href=""></a>
                                 </article>
                                 <article>
-                                    <p>{product.price}</p>
-                                    <button></button>
-                                    <p>{product.stock}</p>
-                                </article> */}
-                                <p key={subGroup.id}>
-                                    <Link to={`/faroritter/${subGroup.id}`}>{subGroup.title}</Link>
-                                </p></figcaption>
-                        ))}
-                    </figure>
-                )
+                                    <p>{favorites.price}</p>
+                                    <button>Læg i kurv</button>
+
+                                </article>
+                            </figcaption>
+
+                        </figure>
+                    )
+                }
+                else {
+                    return null
+                }
             })}
         </>
     )
