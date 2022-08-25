@@ -1,4 +1,15 @@
 @import '../Helpers/mixin';
 @import '../Helpers/variabler';
 
-footer {}
+footer {
+    background-color: $darkgrey;
+
+    position: absolute;
+    padding: 1em;
+    width: 100%;
+    right: 0.2em;
+
+    img {
+        @include center;
+    }
+}
