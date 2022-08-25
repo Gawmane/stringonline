@@ -12,7 +12,7 @@
         section {
             // width: 25%;
             padding-left: 0.5em;
-            padding-top: 0.3em;
+            padding-top: 0.7em;
             position: relative;
             grid-template-rows: auto auto;
 
@@ -32,14 +32,14 @@
             .searchinput {
 
                 width: 10vw;
-                height: 16vh;
+                height: 7vh;
                 @include input;
                 display: inline;
             }
 
             .searchbutton {
                 @include button;
-                height: 16vh;
+                height: 7vh;
                 width: 3.5vw;
                 // font-size: 1.3em;
                 margin-left: 0.3em;
