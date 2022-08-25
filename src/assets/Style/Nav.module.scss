@@ -1,92 +1,102 @@
 @import '../Helpers/mixin';
 @import '../Helpers/variabler';
 
-.mainnav {
 
-    // width: 75%;
+@media screen and (min-width: $x-large) {
 
-    position: relative;
+    .mainnav {
 
-    img {
-        padding-left: 2em;
+        // width: 75%;
 
+        position: relative;
+
+        img {
+            padding-left: 2em;
+
+        }
+
+        ul {
+
+            position: absolute;
+            top: 1.9vw;
+            right: -3vw;
+            width: 50%;
+
+
+            li {
+                display: inline;
+                padding-left: 1em;
+
+
+
+                a {
+                    text-decoration: none;
+                    font-size: 18pt;
+                    color: $white;
+
+                    &:nth-child(3) {
+                        color: $darkgrey;
+                    }
+                }
+
+                button {
+                    @include button;
+                    height: 10vh;
+                    width: 7vw;
+                }
+            }
+        }
     }
 
-    ul {
+    .subnav {
+        border: 1px solid $primærknap;
+        width: 15vw;
+        background-color: $knapbg;
 
-        position: absolute;
-        top: 1.9vw;
-        right: -3vw;
-        width: 50%;
 
 
         li {
-            display: inline;
-            padding-left: 1em;
+            list-style: none;
+            text-align: left;
+            padding-left: 1.5em;
 
+
+            &:nth-child(1) {
+                padding-top: 2em;
+            }
+
+            .subli {
+
+                padding: 0;
+            }
 
 
             a {
+                color: $primærknap;
                 text-decoration: none;
                 font-size: 18pt;
-                color: $white;
+                cursor: pointer;
 
-                &:nth-child(3) {
-                    color: $darkgrey;
+                &:hover {
+                    color: $white;
+                }
+
+                &:active {
+                    color: $white;
                 }
             }
-
-            button {
-                @include button;
-                height: 5vh;
-                width: 7vw;
-            }
         }
+
+        ul {
+            padding: 0.7em;
+            margin: 0;
+        }
+
     }
 }
 
-.subnav {
-    border: 1px solid $primærknap;
-    width: 15vw;
-    background-color: $knapbg;
+@media screen and (max-width: $large) {}
 
+@media screen and (max-width: $tablet) {}
 
-
-    li {
-        list-style: none;
-        text-align: left;
-        padding-left: 1.5em;
-
-
-        &:nth-child(1) {
-            padding-top: 2em;
-        }
-
-        .subli {
-
-            padding: 0;
-        }
-
-
-        a {
-            color: $primærknap;
-            text-decoration: none;
-            font-size: 18pt;
-            cursor: pointer;
-
-            &:hover {
-                color: $white;
-            }
-
-            &:active {
-                color: $white;
-            }
-        }
-    }
-
-    ul {
-        padding: 0.7em;
-        margin: 0;
-    }
-
-}
+@media screen and (max-width: $mobile) {}
