@@ -8,7 +8,7 @@ export const Navigation = () => {
 
     return (
         <nav className={styles.mainnav}>
-            <img src={logo} alt="logo" />
+            <NavLink to={'/'}> <img src={logo} alt="logo" /></NavLink>
             <ul>
                 <li><NavLink to={'/'}>Forside</NavLink></li>
                 <li><NavLink to={'/handelsbetingelser'}>Salgs- og handelsbetingelser</NavLink></li>

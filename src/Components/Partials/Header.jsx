@@ -4,6 +4,7 @@ import { Search } from '../Pages/Search/Search';
 import mail from "../../assets/Images/mail-icon.png"
 import phone from "../../assets/Images/phone-icon.png"
 import cart from "../../assets/Images/cart-icon.png"
+import { Link } from 'react-router-dom';
 
 
 export const Header = () => {
@@ -20,7 +21,7 @@ export const Header = () => {
                         <img src={phone} alt="phoneicon" />
                         <p>+45 98 12 22 68</p>
 
-                        <button><img src={cart} alt="carticon" /></button>
+                        <Link to="/kasse"> <button><img src={cart} alt="carticon" /></button></Link>
                     </div>
                     <Search />
                 </article>
