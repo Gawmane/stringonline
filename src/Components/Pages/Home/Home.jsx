@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { SubNav } from "../../Partials/SubNav"
 import appService from "../../Tools/Appservice/AppService"
 import { Layout } from "../../Tools/Layout/Layout"
-
+import style from "../../../assets/Style/Home.module.scss"
 
 export const Home = () => {
     return (
@@ -12,8 +12,10 @@ export const Home = () => {
 
             </Layout>
             <SubNav />
-            <Hero />
-            <Favorites />
+            <section>
+                <Hero />
+                <h2>Kundernes faroritter</h2>
+                <Favorites /></section>
 
 
         </>
@@ -39,7 +41,7 @@ export const Hero = () => {
     return (
 
 
-        <section>
+        <section className={style.hero}>
             <figure>
                 <img src={hero.image_fullpath} alt={hero.title} />
                 <figcaption>
@@ -71,8 +73,8 @@ export const Favorites = () => {
         getFavorites();
     }, []);
     return (
-        <>
-            <h2>Kundernes faroritter</h2>
+        <section className={style.favorites}>
+
             {farvorit && farvorit.map((favorites, i) => {
                 if (i < 4) {
                     return (
@@ -85,11 +87,11 @@ export const Favorites = () => {
                                     <p>{favorites.description_long.substring(0, 580)} <a href="">Læs mere</a></p>
 
                                 </article>
-                                <article>
-                                    <p>{favorites.price}</p>
-                                    <button>Læg i kurv</button>
 
-                                </article>
+                                <p>Pris DKK{favorites.price}</p>
+                                <button>Læg i kurv</button>
+
+
                             </figcaption>
 
                         </figure>
@@ -99,6 +101,6 @@ export const Favorites = () => {
                     return null
                 }
             })}
-        </>
+        </section>
     )
 }
