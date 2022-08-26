@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { SubNav } from "../../Partials/SubNav";
 import appService from "../../Tools/Appservice/AppService";
-
+import style from "../../../assets/Style/Produkt.module.scss"
 
 
 export const ProductsList = () => {
@@ -41,10 +41,10 @@ export const ProductsList = () => {
                                     <p>{product.description_short} <Link to={`/produkter/id`}>Læs mere</Link> </p>
                                 </article>
                                 <article>
-                                    <p>{product.price}</p>
+                                    <p className={style.pris}>Pris: DKK {product.price}</p>
 
                                     <Link to=""><button>Læg i kurv</button></Link>
-                                    <p>{product.stock}På lager</p>
+                                    <p>{product.stock} På lager</p>
                                 </article>
 
                             </figcaption></figure>

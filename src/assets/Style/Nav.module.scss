@@ -46,7 +46,10 @@
                 }
             }
         }
+
     }
+
+
 
     .subnav {
         border: 1px solid $primærknap;
@@ -99,4 +102,48 @@
 
 @media screen and (max-width: $tablet) {}
 
-@media screen and (max-width: $mobile) {}
+@media screen and (max-width: $mobile) {
+    .mainnav {
+
+        color: white;
+
+
+        img {
+            padding-left: 2em;
+
+        }
+
+        ul {
+
+
+            top: 1.9vw;
+            right: -3vw;
+            width: 50%;
+
+
+            li {
+                display: inline;
+                padding-left: 1em;
+
+
+
+                a {
+                    text-decoration: none;
+                    font-size: 18pt;
+                    color: $white;
+
+                    &:nth-child(3) {
+                        color: $darkgrey;
+                    }
+                }
+
+                button {
+                    @include button;
+                    height: 5vh;
+                    width: 7vw;
+                }
+            }
+        }
+
+    }
+}

@@ -2,29 +2,29 @@
 @import '../Helpers/variabler';
 
 
+
 //Hero
-//favorites
-.favorites {
+.hero {
     color: $white;
     display: grid;
     grid-template-columns: auto auto;
-    gap: 1rem;
+    gap: 2rem;
 
     figure {
         display: grid;
-        grid-template-columns: 40% auto;
+        grid-template-columns: 65% auto;
         border: solid 0.5px $darkgrey;
 
+
         img {
-            transform: rotate(270deg);
             width: 100%;
         }
 
 
         figcaption {
-
+            padding: 1em;
             width: 100%;
-            margin-left: -3em;
+
 
             h3 {
                 margin: 0;
@@ -34,8 +34,10 @@
 
             }
 
-            a {
-                color: $primærknap;
+            h2 {
+                border-top: solid 1px $lightgrey;
+                border-bottom: solid 1px $lightgrey;
+
             }
 
 
@@ -47,14 +49,40 @@
 
             button {
 
-                background-color: $knap;
-                color: $white;
-                width: 50%;
+                background-color: $primærknap;
+
+                border-radius: 30px;
                 display: inline;
 
-                &:hover {}
+
+                color: $darkgrey;
+                text-transform: uppercase;
+
             }
 
         }
+    }
+}
+
+//favorites
+.favorites {
+    @include products;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1rem;
+
+    figure {
+        display: grid;
+        grid-template-columns: 40% auto;
+
+        img {
+            transform: rotate(270deg);
+        }
+
+        figcaption {
+            margin-left: -3em;
+        }
+
+
     }
 }

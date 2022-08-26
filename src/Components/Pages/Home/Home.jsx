@@ -45,7 +45,7 @@ export const Hero = () => {
             <figure>
                 <img src={hero.image_fullpath} alt={hero.title} />
                 <figcaption>
-                    <h1>{hero.title}</h1>
+                    <h1>{hero.name}</h1>
                     <h3>{hero.brand}</h3>
                     <h2>{hero.description_short}</h2>
                     <Link to="/product/1"><button>Læs mere</button></Link>

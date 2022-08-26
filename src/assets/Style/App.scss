@@ -6,13 +6,17 @@ body {
   padding: 3%;
   font-family: $headFont;
   background-color: $background;
-
+  color: $lightgrey;
 
   .layoutTitle,
   .layoutSubtitle {
     color: $white;
   }
 
+  h2,
+  h3 {
+    color: $white;
+  }
 
 
 }

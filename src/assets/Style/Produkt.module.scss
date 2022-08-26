@@ -1,0 +1,47 @@
+@import '../Helpers/mixin';
+@import '../Helpers/variabler';
+
+article {
+    @include products;
+
+    figure {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        height: 30vh;
+
+        img {
+            height: 100%;
+        }
+
+        figcaption {
+            display: grid;
+            grid-template-columns: auto auto;
+
+            article {
+                padding-left: 2em;
+
+                &:nth-child(2) {
+                    display: grid;
+                    grid-template-rows: auto auto auto;
+                    padding-right: 2em;
+
+                }
+
+                .pris {
+                    border: solid 1px $lightgrey;
+                    border-radius: 5px;
+                    width: 10vw;
+
+                    text-align: center;
+                    padding-top: 1em;
+                }
+
+                button {
+                    width: 10vw;
+                    height: 7vh;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
