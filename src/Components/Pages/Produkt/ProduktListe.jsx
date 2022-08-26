@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { SubNav } from "../../Partials/SubNav";
 import appService from "../../Tools/Appservice/AppService";
 import style from "../../../assets/Style/Produkt.module.scss"
 
@@ -26,7 +25,7 @@ export const ProductsList = () => {
         getProduct();
     }, [id]);
     return (
-        <><SubNav />
+        <>
             <article>
 
                 {/* Tjekker ekstitere det og kan den mappes */}

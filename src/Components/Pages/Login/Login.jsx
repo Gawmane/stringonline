@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form"
 import appService from "../../Tools/Appservice/AppService";
 import UseLoginStore from "./UseLoginStore";
 import style from '../../../assets/Style/Login.module.scss'
-import { SubNav } from "../../Partials/SubNav";
 const Login = () => {
 
     const { setLoggedIn } = UseLoginStore((store) => ({
@@ -31,7 +30,7 @@ const Login = () => {
         <section>
             <Layout title="Login" description="Login side" subtitle="Indtast brugernav og adgangskode for at logge på">
                 Login midlertidigt
-                <SubNav />
+
                 {/* Laver form der kan register brugernavn og adgangskode */}
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/* //Spret oparter */}

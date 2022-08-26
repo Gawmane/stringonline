@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
 import { useState, useEffect } from "react";
-import { SubNav } from "../../Partials/SubNav"
 import appService from "../../Tools/Appservice/AppService"
 import { Layout } from "../../Tools/Layout/Layout"
 import style from "../../../assets/Style/Home.module.scss"
@@ -11,7 +10,7 @@ export const Home = () => {
             <Layout title="" description="opgave">
 
             </Layout>
-            <SubNav />
+
             <section>
                 <img src={hero} alt="" />
                 <h2>Kundernes faroritter</h2>

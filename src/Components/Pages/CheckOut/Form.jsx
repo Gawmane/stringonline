@@ -3,7 +3,6 @@ import { Layout } from "../../Tools/Layout/Layout"
 import style from '../../../assets/Style/Contact.module.scss'
 import { useForm } from "react-hook-form";
 import { useState } from 'react'
-import { SubNav } from "../../Partials/SubNav";
 
 //Form const der indeholder alt funktionelt til kontakt formen
 export const Form = () => {
@@ -23,7 +22,7 @@ export const Form = () => {
         setShow(true);
     }
     return (
-        <> <SubNav />
+        <>
             <Layout title="Kasse" description="Check out betaling" />
 
 

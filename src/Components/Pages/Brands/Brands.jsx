@@ -2,7 +2,7 @@ import { Link, Outlet, useParams } from "react-router-dom"
 import { useState, useEffect } from "react";
 
 import appService from "../../Tools/Appservice/AppService"
-import { SubNav } from "../../Partials/SubNav";
+
 import style from "../../../assets/Style/Brands.module.scss"
 
 export const Brands = () => {
@@ -26,7 +26,7 @@ export const Brands = () => {
         <>
             <section className={style.brand}>
 
-                <SubNav />
+
 
 
                 {brandList && brandList.map((item) => {
@@ -64,7 +64,8 @@ export const BrandDetails = ({ data }) => {
     }, [id]);
     return (
         <>
-            <article>
+            {/* Udkommenteret da den placere en tom article på hver side - skal først vises når den er lavet færig */}
+            {/* <article>
                 <figure key={brandDetails.id}>
                     <img src={brandDetails.image_fullpath} alt={brandDetails.title} />
                     <figcaption>
@@ -72,7 +73,7 @@ export const BrandDetails = ({ data }) => {
                         <p>{brandDetails.description}</p>
                     </figcaption>
                 </figure>
-            </article>
+            </article> */}
 
         </>
 

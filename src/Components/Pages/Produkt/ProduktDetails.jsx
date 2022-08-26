@@ -26,8 +26,8 @@ export const ProductsDetails = () => {
     return (
         <>
 
-            <SubNav />
-            <article>
+
+            {/* <article>
 
 
                 <figure key={productDetails.id}>
@@ -50,7 +50,7 @@ export const ProductsDetails = () => {
 
 
 
-            </article>
+            </article> */}
         </>
 
     )
