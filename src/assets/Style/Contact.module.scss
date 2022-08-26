@@ -6,41 +6,86 @@
 @media screen and (min-width: $x-large) {}
 
 //Media Queries - pc skærm
-@media screen and (max-width: $large) {
-    .form {
+// @media screen and (max-width: $large) {
+.form {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10%;
+    margin-bottom: 2em;
+
+    input {
+        @include input;
+        margin-left: 0;
+        margin-bottom: 10px;
+        padding: 5px 5px;
+        display: block;
+        width: 100%;
+        height: 35px;
+
+    }
+
+
+    label {
+        color: $primærknap;
+
+    }
+
+    .checkbox,
+    .radio {
+        background-color: $knapbg;
+        border-radius: 5px;
+        border: solid 1px $knapbg;
+        width: 10%;
+        display: inline;
+    }
+
+    .divwrapper {
+        padding: 1em;
+        background-color: $knapbg;
+        border-radius: 5px;
+        border: solid 1px $knapbg;
+        margin-bottom: 1.5em;
+
+        ul {
+            padding: 0;
+        }
+
         input {
-            margin-left: 0;
+            background-color: $input;
+        }
+
+        select {
+            @include input;
+            display: inline;
+            background-color: $input;
             margin-bottom: 10px;
             padding: 5px 5px;
-            display: block;
-            width: 55%;
+
+            width: 50%;
             height: 35px;
-            border: none;
-        }
-
-        textarea {
-            border: none;
-            resize: none;
-            display: block;
-        }
-
-        //Style af knapper
-        button {
-            border: none;
-            text-align: center;
-            text-decoration: none;
-            text-transform: uppercase;
-            cursor: pointer;
         }
     }
 
-    //Message ved sendt form
-    .formMessage {
-        article {
-            p {}
-        }
+
+
+    //Style af knapper
+    button {
+        @include button;
+        width: 100%;
+        height: 7vh;
+        text-transform: uppercase;
+        cursor: pointer;
     }
 }
+
+//Message ved sendt form
+.formMessage {
+    article {
+        p {}
+    }
+}
+
+// }
 
 //Media Queries - tablet skærm
 @media screen and (max-width: $tablet) {
@@ -78,7 +123,7 @@
 @media screen and (max-width: $mobile) {
     .form {
         input {
-            display: block;
+            display: block !important;
             border: none;
         }
 
