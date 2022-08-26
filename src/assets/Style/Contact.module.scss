@@ -78,46 +78,12 @@
     }
 }
 
-//Message ved sendt form
-.formMessage {
-    article {
-        p {}
-    }
-}
 
-// }
 
-//Media Queries - tablet skærm
-@media screen and (max-width: $tablet) {
-    .form {
-        input {
-            display: block;
-            border: none;
-        }
 
-        textarea {
-            border: none;
-            resize: none;
-            display: block;
-        }
 
-        //Style af knapper
-        button {
-            border: none;
-            text-align: center;
-            text-decoration: none;
-            text-transform: uppercase;
-            cursor: pointer;
-        }
-    }
 
-    //Message ved sendt form
-    .formMessage {
-        article {
-            p {}
-        }
-    }
-}
+
 
 //Media Queries - mobil skærm
 @media screen and (max-width: $mobile) {
