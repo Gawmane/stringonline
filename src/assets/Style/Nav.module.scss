@@ -12,14 +12,14 @@
 
         img {
             padding-left: 2em;
-
+            width: 100%;
         }
 
         ul {
 
             position: absolute;
-            top: 1.9vw;
-            right: -3vw;
+            top: 1.3vw;
+            right: -2vw;
             width: 50%;
 
 
@@ -31,7 +31,7 @@
 
                 a {
                     text-decoration: none;
-                    font-size: 18pt;
+                    font-size: 15pt;
                     color: $white;
 
                     &:nth-child(3) {
@@ -52,6 +52,7 @@
 
 
     .subnav {
+        margin-top: 5em;
         border: 1px solid $primærknap;
         width: 15vw;
         background-color: $knapbg;

@@ -7,12 +7,12 @@
 
     header {
         display: grid;
-        grid-template-columns: 80% 25%;
+        grid-template-columns: 70% 30%;
 
         section {
             // width: 25%;
-            padding-left: 0.5em;
-            padding-top: 0.7em;
+            padding-left: 3em;
+            padding-top: -0.5em;
             position: relative;
             grid-template-rows: auto auto;
 
@@ -31,7 +31,7 @@
 
             .searchinput {
 
-                width: 10vw;
+                width: 17vw;
                 height: 7vh;
                 @include input;
                 display: inline;
@@ -49,7 +49,7 @@
 
         .wrapper {
             p {
-                padding: 1em;
+                padding: 1.5em;
             }
 
             .phone {
@@ -60,6 +60,7 @@
 
             .kurv {
                 background-color: transparent;
+                padding-left: 1em;
                 width: 1.5vw;
             }
         }
