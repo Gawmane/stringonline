@@ -29,13 +29,15 @@ const Login = () => {
     return (
         <section>
             <Layout title="Login" description="Login side" subtitle="Indtast brugernav og adgangskode for at logge på">
-                Login midlertidigt
+
 
                 {/* Laver form der kan register brugernavn og adgangskode */}
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/* //Spret oparter */}
-                    <input type="text" {...register("username", { required: "Brugernavn er påkrævet " })} autoComplete="username" placeholder="Brugernavn:" />
-                    <input type="password" {...register("password", { required: "Password er påkrævet " })} autoComplete="password" placeholder="Password:" />
+                    <label>Brugernavn:</label>
+                    <input type="username" {...register("username", { required: "Brugernavn er påkrævet " })} autoComplete="username" />
+                    <label>Adgangskode:</label>
+                    <input type="password" {...register("password", { required: "Password er påkrævet " })} autoComplete="password" />
                     <button >Login </button>
                 </form>
             </Layout>

@@ -10,7 +10,7 @@ export const LoginPage = () => {
 
     return (
         <>
-            <h1>hej</h1>
+
             <section> {!loggedIn ? <Login /> : <Logout />}</section>
         </>
     );

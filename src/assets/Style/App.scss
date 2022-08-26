@@ -8,9 +8,21 @@ body {
   background-color: $background;
   color: $lightgrey;
 
-  .layoutTitle,
+  .layoutTitle {
+    font-size: 35pt;
+    color: $white;
+    padding: 0;
+    margin: 0;
+    font-weight: lighter;
+
+  }
+
   .layoutSubtitle {
     color: $white;
+    font-size: 18pt;
+    padding: 0;
+    margin: 0;
+
   }
 
   h2,
