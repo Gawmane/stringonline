@@ -7,6 +7,7 @@ body {
   font-family: $headFont;
   background-color: $background;
   color: $lightgrey;
+  overflow-x: hidden;
 
   .layoutTitle {
     font-size: 35pt;
@@ -29,6 +30,7 @@ body {
   h3 {
     color: $white;
   }
+
 
 
 }
