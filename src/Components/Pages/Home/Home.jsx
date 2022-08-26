@@ -4,7 +4,7 @@ import { SubNav } from "../../Partials/SubNav"
 import appService from "../../Tools/Appservice/AppService"
 import { Layout } from "../../Tools/Layout/Layout"
 import style from "../../../assets/Style/Home.module.scss"
-
+import hero from "../../../assets/Images/hero-banner.png"
 export const Home = () => {
     return (
         <>
@@ -13,7 +13,7 @@ export const Home = () => {
             </Layout>
             <SubNav />
             <section>
-                <Hero />
+                <img src={hero} alt="" />
                 <h2>Kundernes faroritter</h2>
                 <Favorites /></section>
 
@@ -22,40 +22,6 @@ export const Home = () => {
     )
 }
 
-export const Hero = () => {
-    const [hero, setHero] = useState([]);
-    useEffect(() => {
-        const getHero = async () => {
-            //Ændres til produkter når det er lavet
-            try {
-                const result = await appService.getList('');
-                if (result.data) {
-                    setHero(result.data.productgroups.items[1].subgroups[0].products[0]);
-                }
-            } catch (error) {
-                console.log(error)
-            }
-        }
-        getHero();
-    }, []);
-    return (
-
-
-        <section className={style.hero}>
-            <figure>
-                <img src={hero.image_fullpath} alt={hero.title} />
-                <figcaption>
-                    <h1>{hero.name}</h1>
-                    <h3>{hero.brand}</h3>
-                    <h2>{hero.description_short}</h2>
-                    <Link to="/product/1"><button>Læs mere</button></Link>
-                </figcaption>
-            </figure>
-        </section>
-
-
-    )
-}
 export const Favorites = () => {
     const [farvorit, setFarvorit] = useState([]);
     useEffect(() => {

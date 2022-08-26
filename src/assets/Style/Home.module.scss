@@ -3,66 +3,6 @@
 
 
 
-//Hero
-.hero {
-    color: $white;
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 2rem;
-
-    figure {
-        display: grid;
-        grid-template-columns: 65% auto;
-        border: solid 0.5px $darkgrey;
-
-
-        img {
-            width: 100%;
-        }
-
-
-        figcaption {
-            padding: 1em;
-            width: 100%;
-
-
-            h3 {
-                margin: 0;
-                padding: 0;
-                font-size: 2em;
-                text-decoration: none;
-
-            }
-
-            h2 {
-                border-top: solid 1px $lightgrey;
-                border-bottom: solid 1px $lightgrey;
-
-            }
-
-
-
-            p {
-                display: inline;
-            }
-
-
-            button {
-
-                background-color: $primærknap;
-
-                border-radius: 30px;
-                display: inline;
-
-
-                color: $darkgrey;
-                text-transform: uppercase;
-
-            }
-
-        }
-    }
-}
 
 //favorites
 .favorites {
