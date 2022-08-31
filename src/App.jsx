@@ -1,5 +1,5 @@
 //Router
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import { AppRouter } from './Components/Tools/Router/AppRouter';
 
 //Components 
@@ -18,8 +18,9 @@ import { SubNav } from './Components/Partials/SubNav';
 function App() {
   return (
     <>
+
       {/* Router - Skal omfange de sider vi har på siden*/}
-      <Router>
+      <BrowserRouter>
         <Header />
         <Main>
           <SubNav />
@@ -27,7 +28,7 @@ function App() {
           <AppRouter />
         </Main>
         <Footer />
-      </Router>
+      </BrowserRouter>
     </>
   );
 }

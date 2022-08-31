@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 
+//named export - da der er flere funktioner i den
 const Layout = props => {
     useEffect(() => {
         document.title = props.title
@@ -7,6 +8,7 @@ const Layout = props => {
             document.querySelector('meta[name="description"]')
                 .setAttribute("content", props.description)
         }
+        //Hvis props ændres - render siden
     }, [props.title, props.description])
 
     return (
