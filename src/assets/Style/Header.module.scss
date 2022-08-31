@@ -3,76 +3,116 @@
 
 
 
-@media screen and (min-width: $x-large) {
+header {
+    display: grid;
+    grid-template-columns: 70% 30%;
 
-    header {
-        display: grid;
-        grid-template-columns: 70% 30%;
+    .logo {
+        padding-left: 2em;
+        width: 100%;
 
-        section {
-            // width: 25%;
-            padding-left: 3em;
-            padding-top: -0.5em;
-            position: relative;
-            grid-template-rows: auto auto;
 
-            div {
-                p {
-                    font-size: 10px;
-                    display: inline;
-                    color: $lightgrey;
-                }
+        @media (width < 1199px) {
+            display: none;
+        }
+    }
 
-                img {
-                    display: inline;
-                    width: 1vw;
-                }
-            }
+    .mainnav {
+        position: relative;
 
-            .searchinput {
-
-                width: 17vw;
-                height: 7vh;
-                @include input;
-                display: inline;
-            }
-
-            .searchbutton {
-                @include button;
-                height: 7vh;
-                width: 3.5vw;
-                // font-size: 1.3em;
-                margin-left: 0.3em;
-
-            }
+        @media (width < 1199px) {
+            display: none;
         }
 
-        .wrapper {
-            p {
-                padding: 1.5em;
-            }
+        .navwrapper {
+            position: absolute;
+            top: 1.3vw;
+            right: -2vw;
+            width: 50%;
 
-            .phone {
-                width: 0.4vw;
-
-
-            }
-
-            .kurv {
-                background-color: transparent;
+            li {
+                display: inline;
                 padding-left: 1em;
-                width: 1.5vw;
+
+
+                a {
+                    text-decoration: none;
+                    font-size: 15pt;
+                    color: $white;
+
+                    &:nth-child(3) {
+                        color: $darkgrey;
+                    }
+                }
+
+                button {
+                    @include button;
+                    height: 5vh;
+                    width: 7vw;
+                }
             }
         }
     }
-}
 
-@media screen and (max-width: $large) {}
 
-@media screen and (max-width: $tablet) {}
 
-@media screen and (max-width: $mobile) {
-    .searchbutton {
-        background-color: red;
+    section {
+        @media (width < 1199px) {
+            display: none;
+        }
+
+        // width: 25%;
+        padding-left: 3em;
+        padding-top: -0.5em;
+        position: relative;
+        grid-template-rows: auto auto;
+
+        div {
+            p {
+                font-size: 10px;
+                display: inline;
+                color: $lightgrey;
+            }
+
+            img {
+                display: inline;
+                width: 1vw;
+            }
+        }
+
+        .searchinput {
+
+            width: 17vw;
+            height: 7vh;
+            @include input;
+            display: inline;
+        }
+
+        .searchbutton {
+            @include button;
+            height: 7vh;
+            width: 3.5vw;
+            // font-size: 1.3em;
+            margin-left: 0.3em;
+
+        }
+    }
+
+    .wrapper {
+        p {
+            padding: 1.5em;
+        }
+
+        .phone {
+            width: 0.4vw;
+
+
+        }
+
+        .kurv {
+            background-color: transparent;
+            padding-left: 1em;
+            width: 1.5vw;
+        }
     }
 }
