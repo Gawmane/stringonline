@@ -2,7 +2,7 @@
 @import '../Helpers/variabler';
 
 
-article {
+.productlist {
     @include products;
 
     figure {
@@ -12,6 +12,8 @@ article {
 
         img {
             height: 100%;
+            transform: rotate(270deg);
+
         }
 
         figcaption {
@@ -35,7 +37,7 @@ article {
                     }
                 }
 
-                .pris {
+                .price {
                     border: solid 1px $lightgrey;
                     border-radius: 5px;
                     width: 10vw;
@@ -54,12 +56,67 @@ article {
     }
 }
 
-.londes {
+.productdetails {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    border: solid 0.5px $darkgrey;
 
-    white-space: pre-wrap;
+    img {
+        width: 100%;
+    }
 
+    .rotateimg {
+        transform: rotate(270deg);
+
+    }
+
+    figcaption {
+
+        h2 {
+            color: $white;
+        }
+    }
+
+    article {
+        display: grid;
+        grid-template-rows: auto auto auto auto auto;
+
+        color: $white;
+
+        img {
+            width: 100%;
+            margin-top: 5em;
+        }
+
+        .price {
+            border: solid 1px $lightgrey;
+            border-radius: 5px;
+            width: 12vw;
+            text-align: center;
+            padding-top: 1em;
+            margin-left: 3em;
+        }
+
+        button {
+            @include button;
+            background-color: $knap;
+            color: $white;
+            width: 12vw;
+            height: 10vh;
+            cursor: pointer;
+            margin-left: 3.5em;
+
+        }
+    }
+
+
+
+    .longdes {
+
+        white-space: pre-wrap;
+
+    }
 }
-
 
 @media screen and (max-width: $mobile ) {
     article {

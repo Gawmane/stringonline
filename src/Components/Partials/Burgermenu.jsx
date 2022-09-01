@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Style from '../../assets/Style/Nav.module.scss'
+import { AiFillHome, AiOutlineClose } from "react-icons/ai";
 
 
 export function BurgerMenu() {
@@ -14,9 +15,8 @@ export function BurgerMenu() {
     return (
         <>
             <div className={isActive ? Style.burgerMenuActive : Style.burgerMenu} onClick={handleToggle}>
-                <div className={Style.burgerMenuLine}></div>
-                <div className={Style.burgerMenuLine}></div>
-                <div className={Style.burgerMenuLine}></div>
+                <AiFillHome className={Style.burgerMenuHome} />
+                <AiOutlineClose className={Style.burgerMenuClose} />
             </div>
 
             <ul className={isActive ? Style.activeMenu : Style.menu}>

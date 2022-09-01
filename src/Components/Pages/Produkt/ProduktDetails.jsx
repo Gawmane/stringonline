@@ -2,7 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Layout } from "../../Tools/Layout/Layout";
-import styles from "../../../assets/Style/Produkt.module.scss"
+import { ProductDetailItem } from "./ProductDetailItem";
+
+
 export const ProductDetails = () => {
     const { product_id } = useParams();
     //Får objekt ud {} - fordi [] arrey kommer kun ud ved lister
@@ -25,15 +27,14 @@ export const ProductDetails = () => {
         [product_id])
 
     return (
+        // Kalder layout komponent med title og description
         <Layout title="Produkt detaljer">
+
+            {/* // Returnerer komponent med product object som data objekt
+            //Splitter html op i yndrelige component (productlistitem) data= smider product ojektet over i andet component som props så vi har adgang til data fra api kaldet
+            */}
             {productData ? (
-                <span>
-                    <h2>{productData.name}</h2>
-                    {productData.image && productData.image.fullpath && (
-                        <img src={productData.image.fullpath} alt={productData.name} />
-                    )}
-                    <p className={styles.longdes}>{productData.description_long}</p>
-                </span>
+                <ProductDetailItem key={productData.id} data={productData} product_id={product_id} />
             ) : null}
         </Layout>
     )

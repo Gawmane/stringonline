@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
-import { style } from "../../../assets/Style/Produkt.module.scss"
+import style from "../../../assets/Style/Produkt.module.scss"
 export const ProductListItem = props => {
     return (
-        <article>
+        <article className={style.productlist}>
             <figure>
                 <img src={props.data.image_fullpath} alt="Billede" />
                 <figcaption>
@@ -14,7 +14,7 @@ export const ProductListItem = props => {
                     </article>
 
                     <article>
-                        <p>Pris: {props.data.price} DKK</p>
+                        <p className={style.price}>Pris: {props.data.price} DKK</p>
                         <button>Læg i kurv</button>
                         <p>{props.data.stock} På lager</p>
                     </article>
