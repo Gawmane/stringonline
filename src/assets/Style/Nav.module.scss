@@ -125,10 +125,7 @@
             padding-top: 2em;
         }
 
-        .subli {
 
-            padding: 0;
-        }
 
 
         a {
@@ -160,53 +157,47 @@
 // @media screen and (max-width: $mobile) {
 
 
-//     .subnav {
-//         border: 1px solid $primærknap;
+.subnav {
+    border: 1px solid $primærknap;
 
-//         background-color: $knapbg;
-
-
-
-//         li {
-//             list-style: none;
-//             text-align: left;
-//             padding-left: 0.5em;
-//             font-size: 0.5em;
-//             display: inline;
+    background-color: $knapbg;
 
 
-//             &:nth-child(1) {
-//                 padding-top: 2em;
-//             }
 
-//             .subli {
+    li {
+        list-style: none;
+        text-align: left;
+        padding-left: 0.5em;
+        font-size: 0.5em;
+        display: inline-block;
 
-//                 padding-left: 1em;
-//                 display: block;
-//             }
+        &:nth-child(1) {
+            padding-top: 2em;
+        }
 
 
-//             a {
-//                 color: $primærknap;
-//                 text-decoration: none;
-//                 font-size: 18pt;
-//                 cursor: pointer;
 
-//                 &:hover {
-//                     color: $white;
-//                 }
 
-//                 &:active {
-//                     color: $white;
-//                 }
-//             }
-//         }
+        a {
+            color: $primærknap;
+            text-decoration: none;
+            font-size: 18pt;
+            cursor: pointer;
 
-//         ul {
-//             padding: 0.7em;
-//             margin: 0;
+            &:hover {
+                color: $white;
+            }
 
-//         }
+            &:active {
+                color: $white;
+            }
+        }
+    }
 
-//     }
-// }
+    ul {
+        padding: 0.7em;
+        margin: 0;
+
+    }
+
+}

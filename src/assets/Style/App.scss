@@ -9,29 +9,37 @@ body {
   color: $lightgrey;
   overflow-x: hidden;
 
-  .layoutTitle {
-    font-size: 35pt;
-    color: $white;
-    padding: 0;
-    margin: 0;
-    font-weight: lighter;
+  main {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1vw;
+    width: 90%;
+    margin: auto;
+
+    .layoutTitle {
+      font-size: 35pt;
+      color: $white;
+      padding: 0;
+      margin: 0;
+      font-weight: lighter;
+
+    }
+
+    .layoutSubtitle {
+      color: $white;
+      font-size: 18pt;
+      padding: 0;
+      margin: 0;
+
+    }
+
+    h2,
+    h3 {
+      color: $white;
+    }
+
 
   }
-
-  .layoutSubtitle {
-    color: $white;
-    font-size: 18pt;
-    padding: 0;
-    margin: 0;
-
-  }
-
-  h2,
-  h3 {
-    color: $white;
-  }
-
-
 
 
 }

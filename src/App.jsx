@@ -25,7 +25,9 @@ function App() {
         <Main>
           <SubNav />
           {/* Indsætter approuter inde i vores main da alt indhold skal ind under main (chrild) */}
-          <AppRouter />
+          <section>
+            <AppRouter />
+          </section>
         </Main>
         <Footer />
       </BrowserRouter>

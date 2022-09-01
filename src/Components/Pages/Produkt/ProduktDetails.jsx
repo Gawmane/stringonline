@@ -1,57 +1,42 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Layout } from "../../Tools/Layout/Layout";
+import styles from "../../../assets/Style/Produkt.module.scss"
+export const ProductDetails = () => {
+    const { product_id } = useParams();
+    //Får objekt ud {} - fordi [] arrey kommer kun ud ved lister
+    const [productData, setProductData] = useState({});
 
-import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
-import { SubNav } from "../../Partials/SubNav";
-import appService from "../../Tools/Appservice/AppService";
-
-
-export const ProductsDetails = () => {
-    const [productDetails, setProductDetails] = useState([]);
-    const { id } = useParams();
-
+    // Hook til styring af renders
     useEffect(() => {
-        const getProductDetails = async () => {
-
+        const getProductData = async () => {
             try {
-                const result = await appService.getDetails('productgroups', id);
-                if (result.data) {
-                    setProductDetails(result.data.group.products);
-                }
-            } catch (error) {
-                console.log(error)
+                const result = await axios.get(`https://api.mediehuset.net/stringsonline/products/${product_id}`)
+                setProductData(result.data.item)
+            } catch {
+                console.error(err)
             }
         }
-        getProductDetails();
-    }, [id]);
+        // Funktionskald
+        getProductData()
+    },
+        // Dependency array - hvis product_id  ændres renderes komponenten
+        [product_id])
+
     return (
-        <>
-
-
-            {/* <article>
-
-
-                <figure key={productDetails.id}>
-                    <img src={productDetails.image_fullpath} alt={productDetails.id} />
-                    <figcaption>
-                        <article>
-                            <h2>{productDetails.name}</h2>
-                            <h2>{productDetails.brand}</h2>
-                            <p>{productDetails.description_short}  </p>
-                        </article>
-                        <article>
-                            <p>{productDetails.price}</p>
-
-                            <Link to=""><button>Læg i kurv</button></Link>
-                            <p>{productDetails.stock}På lager</p>
-                        </article>
-
-                    </figcaption></figure>
-
-
-
-
-            </article> */}
-        </>
-
+        <Layout title="Produkt detaljer">
+            {productData ? (
+                <span>
+                    <h2>{productData.name}</h2>
+                    {productData.image && productData.image.fullpath && (
+                        <img src={productData.image.fullpath} alt={productData.name} />
+                    )}
+                    <p className={styles.longdes}>{productData.description_long}</p>
+                </span>
+            ) : null}
+        </Layout>
     )
 }
+
+

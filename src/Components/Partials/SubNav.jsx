@@ -1,92 +1,54 @@
+import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import appService from "../Tools/Appservice/AppService";
 import style from '../../assets/Style/Nav.module.scss'
-import { Brands } from "../Pages/Brands/Brands";
+
 
 export const SubNav = () => {
-    const [subNav, setSubNav] = useState([])
-    const [brands, setBrands] = useState([]);
-    const [dropdown, setDropdown] = useState(false);
-
-
-    // //Definer getEvent og render den hvis den ændre sig
-    useEffect(() => {
-        const getSubNav = async () => {
-            // Henter get fra appservice og henter "events" og dens id
-            try {
-                const result = await appService.getList('productgroups');
-                if (result.data) {
-                    setSubNav(result.data.items)
-                    // console.log(result.data.items)
-                }
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        getSubNav()
-    }, []);
-
-
+    const [parentGroups, setParentGroups] = useState([]);
+    const [subGroups, setSubGroups] = useState([]);
+    const [curId, setCurId] = useState(0)
 
     useEffect(() => {
-        const getBrands = async () => {
-            //Ændres til produkter når det er lavet
-            try {
-                const result = await appService.getList('brands');
-                if (result.data) {
-                    setBrands(result.data.items);
-                }
-            } catch (error) {
-                console.log(error)
-            }
+        const getData = async () => {
+            const result = await axios.get('https://api.mediehuset.net/stringsonline/groups')
+            setParentGroups(result.data.items)
         }
-        getBrands();
-    }, []);
+        getData()
+    }, [setParentGroups])
 
-    const showDropdown = () => {
-        setDropdown(true);
+    const getSubmenu = async group_id => {
+        const result = await axios.get(`https://api.mediehuset.net/stringsonline/groups/${group_id}`)
+        setCurId(group_id)
+        setSubGroups(result.data.items.subgroups);
     }
 
     return (
-        <nav className={style.subnav} >
-            {/* Tjekker ekstitere det og kan den mappes*/}
-            {subNav && subNav.map((subNav) => {
-                return (
-
-                    <li key={subNav.id}>
-                        <Link to={''} onClick={showDropdown}> {subNav.title} </Link>
-                        {dropdown ? (<ul onClik={showDropdown}>
-                            {subNav && subNav.subgroups.map((subGroup) => {
-                                return (
-                                    <li key={subGroup.id} className={style.subli}>
-                                        <Link to={`/produkter/${subGroup.id}`}>{subGroup.title}</Link>
-
-                                    </li>
-                                )
-                            })}
-                        </ul>) : null}
-                    </li>
-                )
-            })}
-            <li key={brands.id}>
-                <Link to='/' onClick={showDropdown}> Brands </Link>
-
-                {dropdown ? (<ul onClik={showDropdown}>
-                    {brands && brands.map((brands) => {
-                        return (
-                            <li key={brands.id} className={style.subli}>
-                                <Link to={`/brands/${brands.id}`}>{brands.title}</Link>
-                            </li>
-
-                        )
-                    })}
-
-
-                </ul>) : null}
-
-            </li>
-
+        <nav className={style.subnav}>
+            <ul>
+                {parentGroups && parentGroups.map(group => {
+                    return (
+                        <li key={group.id} >
+                            <Link to={'./products'} onClick={() => getSubmenu(group.id)} title={group.description}>{group.title}</Link>
+                            {group.id === curId && (
+                                <ul>
+                                    {subGroups && subGroups.map(subgroup => {
+                                        return (
+                                            <li key={subgroup.id}>
+                                                <Link to={`/products/${subgroup.id}`}>{subgroup.title}</Link>
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                            )}
+                        </li>
+                    )
+                })}
+            </ul>
         </nav>
     )
 }
+
+
+
+

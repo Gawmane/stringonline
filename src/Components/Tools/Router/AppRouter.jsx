@@ -2,12 +2,13 @@ import { Routes, Route } from 'react-router-dom'
 import { NotFound } from '../../Pages/NotFound/NotFound'
 import { Home } from '../../Pages/Home/Home'
 import { Terms } from '../../Pages/Home/Terms'
-import { ProductsList } from '../../Pages/Produkt/ProduktListe'
 import { BrandDetails, Brands } from '../../Pages/Brands/Brands'
 import { Login } from '../../Pages/Login/LoginPage'
 import { Form } from '../../Pages/CheckOut/Form'
-import { ProductsDetails } from '../../Pages/Produkt/ProduktDetails'
+import { ProductDetails } from '../../Pages/Produkt/ProduktDetails'
 import { Extranet } from '../../Pages/Extranet/Extranet'
+import { ProductList } from '../../Pages/Produkt/ProductList'
+import { Products } from '../../Pages/Produkt/Prroducts'
 
 
 export const AppRouter = () => {
@@ -23,13 +24,18 @@ export const AppRouter = () => {
 
 
 
-            <Route path='/produkter' element={<ProductsList />} >
-                <Route path=':id' element={<ProductsDetails />} />
+            <Route path="/products">
+                <Route index element={<Products />}></Route>
+                <Route path=":group_id">
+                    <Route index element={<ProductList />}></Route>
+                    <Route path=":product_id" element={<ProductDetails />}></Route>
+                </Route>
             </Route>
-            <Route path='/brands' element={<Brands />} >
+
+            {/* <Route path='/brands' element={<Brands />} >
                 <Route path=':id' element={<BrandDetails />} />
 
-            </Route>
+            </Route> */}
             <Route path='*' element={<NotFound />} />
         </Routes>
     )
